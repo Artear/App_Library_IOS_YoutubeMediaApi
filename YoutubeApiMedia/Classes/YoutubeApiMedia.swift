@@ -43,7 +43,9 @@ public class YoutubeMediaApi {
 				throw errorType.withQueryItems
 		}
 		
-		let YTModel = YoutubeModel(id: self.id)
+		var source = [Source]()
+		
+		let YTModel = YoutubeMedia(id: self.id)
 		
 		for item in paramsYoutubeItems {
 			guard let value = item.value else {
@@ -59,6 +61,38 @@ public class YoutubeMediaApi {
 					return d.replacingOccurrences(of: "+", with: " ")
 				})
 				break
+			
+			case "url_encoded_fmt_stream_map":
+				guard
+					let components = URLComponents(string: "http://yt?\(value)"),
+					let itemsComponents = components.queryItems
+					else{
+						continue
+				}
+				print("//---------------- \n")
+				
+				for itemComponent in itemsComponents{
+					
+					print("NAME:")
+					
+					print(itemComponent.name)
+					print("\n\n VALUE: ")
+					
+					print(itemComponent.value)
+					print("--\n")
+					
+					
+				}
+				
+				print("\n\n//---------------- \n")
+				
+				break
+
+				
+			case "hlsvp":
+				source.append(Source(qualityType: .adaptative, url: value))
+				break
+			
 			case "player_response":
 				guard
 					let response = value.toJson(),
@@ -78,6 +112,15 @@ public class YoutubeMediaApi {
 				break
 			}
 		}
+		
+		
+		//TODO: check if source is empty
+			//TODO: check if there is a hslv key --> live
+			//TODO: else --> video
+
+		
+		
+		
 		
 		return YTModel
 	}
