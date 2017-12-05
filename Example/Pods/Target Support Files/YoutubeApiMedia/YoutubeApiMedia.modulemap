@@ -1,0 +1,6 @@
+framework module YoutubeApiMedia {
+  umbrella header "YoutubeApiMedia-umbrella.h"
+
+  export *
+  module * { export * }
+}
