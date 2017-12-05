@@ -29,11 +29,11 @@
 
 /* Begin PBXFileReference section */
 		0EEEF806B5D7F37331A926A0 /* Pods-YoutubeApiMedia_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YoutubeApiMedia_Tests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-YoutubeApiMedia_Tests/Pods-YoutubeApiMedia_Tests.debug.xcconfig"; sourceTree = "<group>"; };
-		182212F4752EBF3ADAA4A93E /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
+		182212F4752EBF3ADAA4A93E /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
 		3442E4794E246280C16AD7C1 /* Pods_YoutubeApiMedia_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_YoutubeApiMedia_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		3565D1815A100C916B58D204 /* Pods_YoutubeApiMedia_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_YoutubeApiMedia_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4A047041C7683E826D70429F /* Pods-YoutubeApiMedia_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YoutubeApiMedia_Example.debug.xcconfig"; path = "Pods/Target Support Files/Pods-YoutubeApiMedia_Example/Pods-YoutubeApiMedia_Example.debug.xcconfig"; sourceTree = "<group>"; };
-		4EEEA8A7F31171E22AD361CF /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; name = README.md; path = ../README.md; sourceTree = "<group>"; };
+		4EEEA8A7F31171E22AD361CF /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
 		607FACD01AFB9204008FA782 /* YoutubeApiMedia_Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = YoutubeApiMedia_Example.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		607FACD41AFB9204008FA782 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		607FACD51AFB9204008FA782 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -46,7 +46,7 @@
 		607FACEB1AFB9204008FA782 /* Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tests.swift; sourceTree = "<group>"; };
 		9E3C8E992E799348532E0FCA /* Pods-YoutubeApiMedia_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YoutubeApiMedia_Tests.release.xcconfig"; path = "Pods/Target Support Files/Pods-YoutubeApiMedia_Tests/Pods-YoutubeApiMedia_Tests.release.xcconfig"; sourceTree = "<group>"; };
 		B9CF7048BB562E167FB57EF0 /* Pods-YoutubeApiMedia_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YoutubeApiMedia_Example.release.xcconfig"; path = "Pods/Target Support Files/Pods-YoutubeApiMedia_Example/Pods-YoutubeApiMedia_Example.release.xcconfig"; sourceTree = "<group>"; };
-		CD27C7ED0853CE18359BDA9E /* YoutubeApiMedia.podspec */ = {isa = PBXFileReference; includeInIndex = 1; name = YoutubeApiMedia.podspec; path = ../YoutubeApiMedia.podspec; sourceTree = "<group>"; };
+		CD27C7ED0853CE18359BDA9E /* YoutubeApiMedia.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = YoutubeApiMedia.podspec; path = ../YoutubeApiMedia.podspec; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -215,10 +215,12 @@
 				TargetAttributes = {
 					607FACCF1AFB9204008FA782 = {
 						CreatedOnToolsVersion = 6.3.1;
+						DevelopmentTeam = CY33TK4JQ8;
 						LastSwiftMigration = 0900;
 					};
 					607FACE41AFB9204008FA782 = {
 						CreatedOnToolsVersion = 6.3.1;
+						DevelopmentTeam = CY33TK4JQ8;
 						LastSwiftMigration = 0900;
 						TestTargetID = 607FACCF1AFB9204008FA782;
 					};
@@ -522,6 +524,7 @@
 			baseConfigurationReference = 4A047041C7683E826D70429F /* Pods-YoutubeApiMedia_Example.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = CY33TK4JQ8;
 				INFOPLIST_FILE = YoutubeApiMedia/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				MODULE_NAME = ExampleApp;
@@ -537,6 +540,7 @@
 			baseConfigurationReference = B9CF7048BB562E167FB57EF0 /* Pods-YoutubeApiMedia_Example.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = CY33TK4JQ8;
 				INFOPLIST_FILE = YoutubeApiMedia/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				MODULE_NAME = ExampleApp;
@@ -551,6 +555,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 0EEEF806B5D7F37331A926A0 /* Pods-YoutubeApiMedia_Tests.debug.xcconfig */;
 			buildSettings = {
+				DEVELOPMENT_TEAM = CY33TK4JQ8;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",
@@ -572,6 +577,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 9E3C8E992E799348532E0FCA /* Pods-YoutubeApiMedia_Tests.release.xcconfig */;
 			buildSettings = {
+				DEVELOPMENT_TEAM = CY33TK4JQ8;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",
