@@ -11,6 +11,7 @@ class YoutubeMedia {
 	var id:String
 	var title:String = ""
 	var keywords:[String] = [String]()
+	var media : Media!
 	
 	init(id:String) {
 		self.id = id
@@ -40,13 +41,13 @@ class Media{
 
 
 class Source{
-	enum QualityType {
+	enum QualityType : String {
 		case hd720
 		case medium
 		case small
 		case adaptative
 	}
-	var quality : QualityType
+	var quality : QualityType = .adaptative
 	var url : String
 	
 	init(qualityType : QualityType, url : String) {
