@@ -2,6 +2,10 @@ use_frameworks!
 
 target 'YoutubeApiMedia_Example' do
   pod 'YoutubeApiMedia', :path => '../'
+  pod 'PromiseKit', '~> 4.4'
+  pod 'PromiseKit/Alamofire'
+  pod 'Kingfisher', '~> 4.0'
+  pod 'youtube-ios-player-helper'
 
   target 'YoutubeApiMedia_Tests' do
     inherit! :search_paths
