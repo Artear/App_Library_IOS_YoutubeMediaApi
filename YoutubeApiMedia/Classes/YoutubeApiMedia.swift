@@ -31,7 +31,7 @@ public class YoutubeMediaApi {
 	}
 	
 	
-	func parse() throws -> YoutubeModel {
+	func parse() throws -> YoutubeMedia {
 		guard let params = self.content else {
 			throw errorType.withOutData
 		}
@@ -43,9 +43,10 @@ public class YoutubeMediaApi {
 				throw errorType.withQueryItems
 		}
 		
-		var source = [Source]()
+		var sources = [Source]()
 		
-		let YTModel = YoutubeMedia(id: self.id)
+		let YTMedia = YoutubeMedia(id: self.id)
+		var mediaType : Media.Types!
 		
 		for item in paramsYoutubeItems {
 			guard let value = item.value else {
@@ -54,10 +55,10 @@ public class YoutubeMediaApi {
 			
 			switch item.name {
 			case "title":
-				YTModel.title = value.replacingOccurrences(of: "+", with: " ")
+				YTMedia.title = value.replacingOccurrences(of: "+", with: " ")
 				break
 			case "keywords":
-				YTModel.keywords = value.components(separatedBy: ",").map({ (d) -> String in
+				YTMedia.keywords = value.components(separatedBy: ",").map({ (d) -> String in
 					return d.replacingOccurrences(of: "+", with: " ")
 				})
 				break
@@ -69,59 +70,87 @@ public class YoutubeMediaApi {
 					else{
 						continue
 				}
-				print("//---------------- \n")
 				
-				for itemComponent in itemsComponents{
-					
-					print("NAME:")
-					
-					print(itemComponent.name)
-					print("\n\n VALUE: ")
-					
-					print(itemComponent.value)
-					print("--\n")
-					
-					
+				let urls = itemsComponents.filter({ (item) -> Bool in
+					return item.value != nil && item.name == "url"
+				})
+				
+				let quality = itemsComponents.filter({ (item) -> Bool in
+					return (
+						item.value != nil && item.name == "quality"
+					)
+				})
+				
+				if urls.count == quality.count {
+					for index in 0...(urls.count - 1) {
+						if let source = self.createSource(components: [quality[index],urls[index]]){
+							sources.append(source)
+						}
+					}
 				}
-				
-				print("\n\n//---------------- \n")
+				mediaType = .video
 				
 				break
 
 				
 			case "hlsvp":
-				source.append(Source(qualityType: .adaptative, url: value))
+				//its alive
+				mediaType = .live
+				sources.append(Source(qualityType: .adaptative, url: value))
 				break
 			
-			case "player_response":
-				guard
-					let response = value.toJson(),
-					let videoDetails = response["videoDetails"] as? [Any]
-					else {
-						continue
-				}
-				print(response)
-				break
+//			case "player_response":
+//				guard
+//					let response = value.toJson(),
+//					let videoDetails = response["videoDetails"] as? [Any]
+//					else {
+//						continue
+//				}
+//				print(response)
+//				break
 			default:
-				print("> NAME --------------------------")
-				print("> \(item.name)")
-				print("> VALUE -------------------------")
-				print("> \(value)")
-				print("> -------------------------------")
-				print(" ")
+//				print("> NAME --------------------------")
+//				print("> \(item.name)")
+//				print("> VALUE -------------------------")
+//				print("> \(value)")
+//				print("> -------------------------------")
+//				print(" ")
 				break
 			}
 		}
 		
+		let media = Media(type: mediaType, source: sources)
+		YTMedia.media = media
 		
-		//TODO: check if source is empty
-			//TODO: check if there is a hslv key --> live
-			//TODO: else --> video
-
-		
-		
-		
-		
-		return YTModel
+		return YTMedia
 	}
+	
+	func createSource(components : [URLQueryItem]) -> Source? {
+		
+		var quality : Source.QualityType!
+		var url : String?
+		
+		for component in components{
+			switch component.name{
+			case "quality":
+				if let value = Source.QualityType(rawValue: component.value!){
+					quality = value
+				} else{
+					quality = .adaptative
+				}
+				break
+			case "url":
+				url = component.value
+				break
+			default:
+				break
+			}
+		}
+		if url != nil{
+			return Source(qualityType: quality, url: url!)
+		}
+		return nil
+	}
+	
+	
 }
