@@ -15,6 +15,8 @@
 		607FACE01AFB9204008FA782 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 607FACDE1AFB9204008FA782 /* LaunchScreen.xib */; };
 		607FACEC1AFB9204008FA782 /* Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACEB1AFB9204008FA782 /* Tests.swift */; };
 		7E40C2B61BB6B1C7FA0A04F2 /* Pods_YoutubeApiMedia_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3442E4794E246280C16AD7C1 /* Pods_YoutubeApiMedia_Tests.framework */; };
+		E18E8F511FD861690090EEF5 /* Api.swift in Sources */ = {isa = PBXBuildFile; fileRef = E18E8F501FD861690090EEF5 /* Api.swift */; };
+		E18E8F5A1FD865040090EEF5 /* ApiError.swift in Sources */ = {isa = PBXBuildFile; fileRef = E18E8F591FD865040090EEF5 /* ApiError.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +49,8 @@
 		9E3C8E992E799348532E0FCA /* Pods-YoutubeApiMedia_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YoutubeApiMedia_Tests.release.xcconfig"; path = "Pods/Target Support Files/Pods-YoutubeApiMedia_Tests/Pods-YoutubeApiMedia_Tests.release.xcconfig"; sourceTree = "<group>"; };
 		B9CF7048BB562E167FB57EF0 /* Pods-YoutubeApiMedia_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YoutubeApiMedia_Example.release.xcconfig"; path = "Pods/Target Support Files/Pods-YoutubeApiMedia_Example/Pods-YoutubeApiMedia_Example.release.xcconfig"; sourceTree = "<group>"; };
 		CD27C7ED0853CE18359BDA9E /* YoutubeApiMedia.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = YoutubeApiMedia.podspec; path = ../YoutubeApiMedia.podspec; sourceTree = "<group>"; };
+		E18E8F501FD861690090EEF5 /* Api.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Api.swift; sourceTree = "<group>"; };
+		E18E8F591FD865040090EEF5 /* ApiError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiError.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -113,6 +117,9 @@
 		607FACD21AFB9204008FA782 /* Example for YoutubeApiMedia */ = {
 			isa = PBXGroup;
 			children = (
+				E18E8F4D1FD8611F0090EEF5 /* repository */,
+				E18E8F4C1FD8610E0090EEF5 /* domain */,
+				E18E8F4B1FD860D60090EEF5 /* presentation */,
 				607FACD51AFB9204008FA782 /* AppDelegate.swift */,
 				607FACD71AFB9204008FA782 /* ViewController.swift */,
 				607FACD91AFB9204008FA782 /* Main.storyboard */,
@@ -157,6 +164,15 @@
 				182212F4752EBF3ADAA4A93E /* LICENSE */,
 			);
 			name = "Podspec Metadata";
+			sourceTree = "<group>";
+		};
+		E18E8F4C1FD8610E0090EEF5 /* domain */ = {
+			isa = PBXGroup;
+			children = (
+				E18E8F501FD861690090EEF5 /* Api.swift */,
+				E18E8F591FD865040090EEF5 /* ApiError.swift */,
+			);
+			name = domain;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -311,11 +327,19 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-YoutubeApiMedia_Example/Pods-YoutubeApiMedia_Example-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/Kingfisher/Kingfisher.framework",
+				"${BUILT_PRODUCTS_DIR}/PromiseKit/PromiseKit.framework",
 				"${BUILT_PRODUCTS_DIR}/YoutubeApiMedia/YoutubeApiMedia.framework",
+				"${BUILT_PRODUCTS_DIR}/youtube-ios-player-helper/youtube_ios_player_helper.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Kingfisher.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PromiseKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/YoutubeApiMedia.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/youtube_ios_player_helper.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -377,8 +401,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E18E8F511FD861690090EEF5 /* Api.swift in Sources */,
 				607FACD81AFB9204008FA782 /* ViewController.swift in Sources */,
 				607FACD61AFB9204008FA782 /* AppDelegate.swift in Sources */,
+				E18E8F5A1FD865040090EEF5 /* ApiError.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
