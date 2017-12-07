@@ -7,11 +7,17 @@
 
 import Foundation
 
-class YoutubeMedia {
+class YTMetadata {
+    enum Types {
+        case live
+        case video
+    }
+    
 	var id:String
 	var title:String?
 	var keywords:[String] = [String]()
-	var media : Media!
+	var media:YTMedia?
+    var type:Types = .video
 	
 	init(id:String) {
 		self.id = id

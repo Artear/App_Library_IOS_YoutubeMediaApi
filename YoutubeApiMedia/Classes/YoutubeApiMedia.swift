@@ -31,11 +31,11 @@ public class YoutubeMediaApi {
 	}
 	
 	
-	func parse() throws -> YoutubeMedia {
+	func parse() throws -> Youtube.Metadata {
 		guard let params = self.content else {
 			throw errorType.withOutData
 		}
-		
+        
 		guard
 			let paramsYoutube = URLComponents(string: "http://yt?\(params)"),
 			let paramsYoutubeItems = paramsYoutube.queryItems
@@ -43,11 +43,9 @@ public class YoutubeMediaApi {
 				throw errorType.withQueryItems
 		}
 		
-		var sources = [Source]()
-		
-		let YTMedia = YoutubeMedia(id: self.id)
-		var mediaType : Media.Types!
-		
+        let Metadata = Youtube.Metadata(id: self.id)
+		var sources = [Youtube.Metadata.Media.Sourse]()
+
 		for item in paramsYoutubeItems {
 			guard let value = item.value else {
 				continue
@@ -55,10 +53,10 @@ public class YoutubeMediaApi {
 			
 			switch item.name {
 			case "title":
-				YTMedia.title = value.replacingOccurrences(of: "+", with: " ")
+				Metadata.title = value.replacingOccurrences(of: "+", with: " ")
 				break
 			case "keywords":
-				YTMedia.keywords = value.components(separatedBy: ",").map({ (d) -> String in
+				Metadata.keywords = value.components(separatedBy: ",").map({ (d) -> String in
 					return d.replacingOccurrences(of: "+", with: " ")
 				})
 				break
@@ -88,15 +86,11 @@ public class YoutubeMediaApi {
 						}
 					}
 				}
-				mediaType = .video
 				
 				break
-
-				
 			case "hlsvp":
-				//its alive
-				mediaType = .live
-				sources.append(Source(url: value))
+				Metadata.type = .live
+				sources.append(Youtube.Metadata.Media.Sourse(url: value))
 				break
 			
 //			case "player_response":
@@ -119,21 +113,20 @@ public class YoutubeMediaApi {
 			}
 		}
 		
-		let media = Media(type: mediaType, source: sources)
-		YTMedia.media = media
+		let media = Youtube.Metadata.Media(source: sources)
+		Metadata.media = media
 		
-		return YTMedia
+		return Metadata
 	}
 	
-	func createSource(components : [URLQueryItem]) -> Source? {
-		
-		var quality : Source.QualityType!
+	func createSource(components : [URLQueryItem]) -> Youtube.Metadata.Media.Sourse? {
+		var quality : YTSource.QualityType!
 		var url : String?
 		
 		for component in components{
 			switch component.name{
 			case "quality":
-				if let value = Source.QualityType(rawValue: component.value!){
+				if let value = YTSource.QualityType(rawValue: component.value!){
 					quality = value
 				} else{
 					quality = .adaptative
@@ -147,10 +140,12 @@ public class YoutubeMediaApi {
 			}
 		}
 		if url != nil{
-			return Source(url: url!, qualityType: quality)
+			return Youtube.Metadata.Media.Sourse(url: url!, qualityType: quality)
 		}
 		return nil
 	}
 	
 	
 }
+
+
