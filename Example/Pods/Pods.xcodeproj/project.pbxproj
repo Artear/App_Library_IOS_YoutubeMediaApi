@@ -110,6 +110,8 @@
 		DA2CAF51DF0760F8C32E1728A89536BF /* QuickTestSuite.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E8E430D83F3CC7F72E348A0B222C46F /* QuickTestSuite.swift */; };
 		DEDB3CD4FDC0D17D52C4B32E8BCF0917 /* QuickSpec.h in Headers */ = {isa = PBXBuildFile; fileRef = EA8315675F3D2B2385E834043F85C676 /* QuickSpec.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		DF026F6F406A4FB6CEA63B0A4B9E27DD /* AllPass.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6E780E005CD78D86050E2F1C9B86227 /* AllPass.swift */; settings = {COMPILER_FLAGS = "-DPRODUCT_NAME=Nimble/Nimble"; }; };
+		E1CC3C111FD9B24C0088A0CE /* Media.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1CC3C101FD9B24C0088A0CE /* Media.swift */; };
+		E1CC3C131FD9B2690088A0CE /* Source.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1CC3C121FD9B2690088A0CE /* Source.swift */; };
 		EA1E1939BE4180C9E32F1474B574D22C /* HooksPhase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9245B48A46AAC45502A6B8A2AB745038 /* HooksPhase.swift */; };
 		EAAA05EBBC34225C0DB45797712E24A1 /* AsyncMatcherWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFA739FCCF461022D3476D9AC0A12969 /* AsyncMatcherWrapper.swift */; settings = {COMPILER_FLAGS = "-DPRODUCT_NAME=Nimble/Nimble"; }; };
 		EAE2AAE5EB826B38978692984BB22FDD /* RaisesException.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C12FE311471678F66F177EFA1D02222 /* RaisesException.swift */; settings = {COMPILER_FLAGS = "-DPRODUCT_NAME=Nimble/Nimble"; }; };
@@ -282,6 +284,8 @@
 		D61A65644B128A845AB3BF3D8631CC4C /* Stringers.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Stringers.swift; path = Sources/Nimble/Utils/Stringers.swift; sourceTree = "<group>"; };
 		D685C0D509328CD8778F99DD53A49A48 /* Closures.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Closures.swift; path = Sources/Quick/Hooks/Closures.swift; sourceTree = "<group>"; };
 		D6C3B6DAC9EE276DD752D93EAED6E88B /* ExpectationMessage.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ExpectationMessage.swift; path = Sources/Nimble/ExpectationMessage.swift; sourceTree = "<group>"; };
+		E1CC3C101FD9B24C0088A0CE /* Media.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Media.swift; sourceTree = "<group>"; };
+		E1CC3C121FD9B2690088A0CE /* Source.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Source.swift; sourceTree = "<group>"; };
 		E32F5B894304A324CD56AB687A5D06B2 /* NMBStringify.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = NMBStringify.m; path = Sources/NimbleObjectiveC/NMBStringify.m; sourceTree = "<group>"; };
 		E585A4F6C1434FD922B8371E432B5051 /* QuickSpecBase.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = QuickSpecBase.m; path = Sources/QuickSpecBase/QuickSpecBase.m; sourceTree = "<group>"; };
 		E5D8173434FE00016739EAFDEFEA9313 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
@@ -425,6 +429,7 @@
 		75473E7D162F189D54A69327388DFC94 /* YoutubeApiMedia */ = {
 			isa = PBXGroup;
 			children = (
+				E1CC3C0F1FD9B20D0088A0CE /* Media */,
 				949AD497D576B8A547A79E499E7C690F /* YoutubeMedia.swift */,
 				750FC2941FD70FA800B07BDF /* YoutubeApiMedia.swift */,
 				750FC2921FD70F7700B07BDF /* Utils.swift */,
@@ -614,6 +619,16 @@
 				52324DECCF3E0D2A76F8AC61AB22FC1B /* Support Files */,
 			);
 			path = Quick;
+			sourceTree = "<group>";
+		};
+		E1CC3C0F1FD9B20D0088A0CE /* Media */ = {
+			isa = PBXGroup;
+			children = (
+				E1CC3C101FD9B24C0088A0CE /* Media.swift */,
+				E1CC3C121FD9B2690088A0CE /* Source.swift */,
+			);
+			name = Media;
+			path = YoutubeApiMedia/Classes/Media;
 			sourceTree = "<group>";
 		};
 		FD5E696165A90683C5A1F6608CBC7BED /* Targets Support Files */ = {
@@ -929,8 +944,10 @@
 			files = (
 				3C365168EC5A3167300498EE89A2A730 /* YoutubeApiMedia-dummy.m in Sources */,
 				6430DA2B29D1E4DE26822085E5330603 /* YoutubeMedia.swift in Sources */,
+				E1CC3C131FD9B2690088A0CE /* Source.swift in Sources */,
 				750FC2961FD710D100B07BDF /* YoutubeApiMedia.swift in Sources */,
 				750FC2971FD710D400B07BDF /* Utils.swift in Sources */,
+				E1CC3C111FD9B24C0088A0CE /* Media.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -96,7 +96,7 @@ public class YoutubeMediaApi {
 			case "hlsvp":
 				//its alive
 				mediaType = .live
-				sources.append(Source(qualityType: .adaptative, url: value))
+				sources.append(Source(url: value))
 				break
 			
 //			case "player_response":
@@ -147,7 +147,7 @@ public class YoutubeMediaApi {
 			}
 		}
 		if url != nil{
-			return Source(qualityType: quality, url: url!)
+			return Source(url: url!, qualityType: quality)
 		}
 		return nil
 	}
