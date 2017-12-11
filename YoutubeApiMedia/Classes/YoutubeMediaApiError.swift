@@ -14,7 +14,7 @@ enum YoutubeMediaApiError: Error {
     case serverError(code:Int, reason:String)
 }
 
-extension YoutubeMediaApiError: LocalizedError
+extension YoutubeMediaApiError: LocalizedError{
     // TODO: add error description
     public var errorDescription: String? {
         switch self {
