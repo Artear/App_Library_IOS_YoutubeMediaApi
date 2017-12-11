@@ -8,6 +8,7 @@
 
 import UIKit
 import MediaPlayer
+import YoutubeApiMedia
 
 class NativePlayerViewController: UIViewController {
     @IBOutlet var player:UIView!
@@ -23,8 +24,12 @@ class NativePlayerViewController: UIViewController {
     }
 
     func loadVideo() {
-        if let idVideo = self.params?.id {
-            // TODO: get youtube url
+        guard let youtubeID = self.params?.id else {
+            return
+        }
+        
+        YoutubeMediaApi(id: youtubeID).run().then{ metadata -> Void in
+            print("metadata \(metadata)")
             let videoURL = URL(string: "https://clips.vorwaerts-gmbh.de/big_buck_bunny.mp4")
             self.avPlayer = AVPlayer(url: videoURL!)
             self.avPlayerLayer = AVPlayerLayer(player: self.avPlayer)
@@ -32,7 +37,10 @@ class NativePlayerViewController: UIViewController {
             self.avPlayerLayer?.frame = self.player.bounds
             self.player.layer.addSublayer(self.avPlayerLayer!)
             self.avPlayer?.play()
+            }.catch { error in
+                print("metadata \(error.localizedDescription)")
         }
+        
     }
     
     override func didReceiveMemoryWarning() {

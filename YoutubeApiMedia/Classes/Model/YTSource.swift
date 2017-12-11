@@ -7,7 +7,7 @@
 
 import UIKit
 
-class YTSource {
+public class YTSource {
     enum QualityType : String {
         case hd720
         case medium

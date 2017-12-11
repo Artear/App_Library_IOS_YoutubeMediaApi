@@ -7,7 +7,7 @@
 
 import UIKit
 
-class Youtube {
+public class Youtube {
     private init() { }
     class Metadata: YTMetadata {
         class Media: YTMedia {

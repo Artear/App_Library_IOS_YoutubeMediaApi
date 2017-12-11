@@ -7,7 +7,7 @@
 
 import Foundation
 
-class YTMetadata {
+public class YTMetadata {
     enum Types {
         case live
         case video
