@@ -38,7 +38,7 @@ class NativePlayerViewController: UIViewController {
             self.player.layer.addSublayer(self.avPlayerLayer!)
             self.avPlayer?.play()
             }.catch { error in
-                print("metadata \(error.localizedDescription)")
+                print("Error load video \(error.localizedDescription)")
         }
         
     }

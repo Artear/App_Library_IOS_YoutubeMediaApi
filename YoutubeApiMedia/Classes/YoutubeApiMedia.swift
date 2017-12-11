@@ -9,13 +9,6 @@ import Foundation
 import PromiseKit
 
 public class YoutubeMediaApi {
-	enum errorType: Error {
-		case unknown
-		case withOutData
-		case withQueryItems
-		case outsideBroadcast
-		case notHls
-	}
 	var id:String
 	public init(id:String) {
 		self.id = id
@@ -34,14 +27,26 @@ public class YoutubeMediaApi {
             headers: headers
             )
             .validate()
+            .alamofireLog()
             .responseString().then { data in
                 return Promise { fulfill, reject in
-                    // TODO: add parse
-                    fulfill(YTMetadata(id: self.id))
+                    do {
+                        if let metadata = try YTMetadata.parse(data: data) {
+                            fulfill(metadata)
+                        }
+                        reject(YoutubeMediaApiError.unknown)
+                    } catch {
+                        reject(error)
+                    }
                 }
         }
     }
 	
 }
 
-
+extension DataRequest {
+    public func alamofireLog() -> Self {
+        print("Request: \(self)")
+        return self
+    }
+}
