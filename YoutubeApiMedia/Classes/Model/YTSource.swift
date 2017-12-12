@@ -8,7 +8,7 @@
 import UIKit
 
 public class YTSource {
-    enum QualityType : String {
+    public enum QualityType : String {
         case hd720
         case medium
         case small
@@ -18,7 +18,7 @@ public class YTSource {
     var quality : QualityType
     var url : String
     
-    init(url : String, qualityType : QualityType = .adaptative) {
+    public init(url : String, qualityType : QualityType = .adaptative) {
         self.quality = qualityType
         self.url = url
     }

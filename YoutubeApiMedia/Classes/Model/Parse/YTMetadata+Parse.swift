@@ -8,7 +8,7 @@
 import UIKit
 
 extension YTMetadata {
-    static func parse(data:String?) throws -> YTMetadata? {
+    public static func parse(data:String?) throws -> YTMetadata? {
         guard let stringParams = data else {
             throw YoutubeMediaApiError.withOutData
         }

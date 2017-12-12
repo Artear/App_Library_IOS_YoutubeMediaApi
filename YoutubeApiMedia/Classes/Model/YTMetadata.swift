@@ -8,7 +8,7 @@
 import Foundation
 
 public class YTMetadata {
-    enum Types {
+    public enum Types {
         case live
         case video
     }
@@ -19,7 +19,7 @@ public class YTMetadata {
 	var media:YTMedia?
     var type:Types = .video
 	
-	init(id:String) {
+	public init(id:String) {
 		self.id = id
 	}
 }

@@ -13,7 +13,7 @@
 		607FACDB1AFB9204008FA782 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 607FACD91AFB9204008FA782 /* Main.storyboard */; };
 		607FACDD1AFB9204008FA782 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 607FACDC1AFB9204008FA782 /* Images.xcassets */; };
 		607FACE01AFB9204008FA782 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 607FACDE1AFB9204008FA782 /* LaunchScreen.xib */; };
-		607FACEC1AFB9204008FA782 /* Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACEB1AFB9204008FA782 /* Tests.swift */; };
+		607FACEC1AFB9204008FA782 /* ContentRestrictions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACEB1AFB9204008FA782 /* ContentRestrictions.swift */; };
 		7E40C2B61BB6B1C7FA0A04F2 /* Pods_YoutubeApiMedia_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3442E4794E246280C16AD7C1 /* Pods_YoutubeApiMedia_Tests.framework */; };
 		E18A888E1FD8791F00DC1974 /* CoverMediaCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E18A888D1FD8791F00DC1974 /* CoverMediaCollectionViewCell.swift */; };
 		E18A88901FD887FC00DC1974 /* YoutubeCoverVideo.swift in Sources */ = {isa = PBXBuildFile; fileRef = E18A888F1FD887FC00DC1974 /* YoutubeCoverVideo.swift */; };
@@ -24,6 +24,10 @@
 		E18E8F5A1FD865040090EEF5 /* ApiError.swift in Sources */ = {isa = PBXBuildFile; fileRef = E18E8F591FD865040090EEF5 /* ApiError.swift */; };
 		E18E8F5C1FD865FA0090EEF5 /* ViewControllerPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E18E8F5B1FD865FA0090EEF5 /* ViewControllerPresenter.swift */; };
 		E1CC3C0D1FD8B3FA0088A0CE /* NativePlayerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1CC3C0C1FD8B3FA0088A0CE /* NativePlayerViewController.swift */; };
+		E1F3B9291FDF0596006431DD /* 0tek2aa8hAQ.txt in Resources */ = {isa = PBXBuildFile; fileRef = E1F3B9261FDF0596006431DD /* 0tek2aa8hAQ.txt */; };
+		E1F3B92A1FDF0596006431DD /* GmHrjFIWl6U.txt in Resources */ = {isa = PBXBuildFile; fileRef = E1F3B9271FDF0596006431DD /* GmHrjFIWl6U.txt */; };
+		E1F3B92B1FDF0596006431DD /* NNDIhWA95ts.txt in Resources */ = {isa = PBXBuildFile; fileRef = E1F3B9281FDF0596006431DD /* NNDIhWA95ts.txt */; };
+		E1F3B93B1FDF3E1B006431DD /* YoutubeMediaApiMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1F3B93A1FDF3E1B006431DD /* YoutubeMediaApiMock.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -52,7 +56,7 @@
 		607FACDF1AFB9204008FA782 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		607FACE51AFB9204008FA782 /* YoutubeApiMedia_Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = YoutubeApiMedia_Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		607FACEA1AFB9204008FA782 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		607FACEB1AFB9204008FA782 /* Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tests.swift; sourceTree = "<group>"; };
+		607FACEB1AFB9204008FA782 /* ContentRestrictions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentRestrictions.swift; sourceTree = "<group>"; };
 		9E3C8E992E799348532E0FCA /* Pods-YoutubeApiMedia_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YoutubeApiMedia_Tests.release.xcconfig"; path = "Pods/Target Support Files/Pods-YoutubeApiMedia_Tests/Pods-YoutubeApiMedia_Tests.release.xcconfig"; sourceTree = "<group>"; };
 		B9CF7048BB562E167FB57EF0 /* Pods-YoutubeApiMedia_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YoutubeApiMedia_Example.release.xcconfig"; path = "Pods/Target Support Files/Pods-YoutubeApiMedia_Example/Pods-YoutubeApiMedia_Example.release.xcconfig"; sourceTree = "<group>"; };
 		CD27C7ED0853CE18359BDA9E /* YoutubeApiMedia.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = YoutubeApiMedia.podspec; path = ../YoutubeApiMedia.podspec; sourceTree = "<group>"; };
@@ -65,6 +69,10 @@
 		E18E8F591FD865040090EEF5 /* ApiError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiError.swift; sourceTree = "<group>"; };
 		E18E8F5B1FD865FA0090EEF5 /* ViewControllerPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerPresenter.swift; sourceTree = "<group>"; };
 		E1CC3C0C1FD8B3FA0088A0CE /* NativePlayerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NativePlayerViewController.swift; sourceTree = "<group>"; };
+		E1F3B9261FDF0596006431DD /* 0tek2aa8hAQ.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = 0tek2aa8hAQ.txt; sourceTree = "<group>"; };
+		E1F3B9271FDF0596006431DD /* GmHrjFIWl6U.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = GmHrjFIWl6U.txt; sourceTree = "<group>"; };
+		E1F3B9281FDF0596006431DD /* NNDIhWA95ts.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = NNDIhWA95ts.txt; sourceTree = "<group>"; };
+		E1F3B93A1FDF3E1B006431DD /* YoutubeMediaApiMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YoutubeMediaApiMock.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -155,7 +163,8 @@
 		607FACE81AFB9204008FA782 /* Tests */ = {
 			isa = PBXGroup;
 			children = (
-				607FACEB1AFB9204008FA782 /* Tests.swift */,
+				E1F3B9251FDF0596006431DD /* Mocks */,
+				607FACEB1AFB9204008FA782 /* ContentRestrictions.swift */,
 				607FACE91AFB9204008FA782 /* Supporting Files */,
 			);
 			path = Tests;
@@ -248,6 +257,17 @@
 				E18A888F1FD887FC00DC1974 /* YoutubeCoverVideo.swift */,
 			);
 			name = model;
+			sourceTree = "<group>";
+		};
+		E1F3B9251FDF0596006431DD /* Mocks */ = {
+			isa = PBXGroup;
+			children = (
+				E1F3B93A1FDF3E1B006431DD /* YoutubeMediaApiMock.swift */,
+				E1F3B9261FDF0596006431DD /* 0tek2aa8hAQ.txt */,
+				E1F3B9271FDF0596006431DD /* GmHrjFIWl6U.txt */,
+				E1F3B9281FDF0596006431DD /* NNDIhWA95ts.txt */,
+			);
+			path = Mocks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -351,6 +371,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E1F3B92B1FDF0596006431DD /* NNDIhWA95ts.txt in Resources */,
+				E1F3B92A1FDF0596006431DD /* GmHrjFIWl6U.txt in Resources */,
+				E1F3B9291FDF0596006431DD /* 0tek2aa8hAQ.txt in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -364,11 +387,17 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-YoutubeApiMedia_Tests/Pods-YoutubeApiMedia_Tests-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/PromiseKit/PromiseKit.framework",
+				"${BUILT_PRODUCTS_DIR}/YoutubeApiMedia/YoutubeApiMedia.framework",
 				"${BUILT_PRODUCTS_DIR}/Nimble/Nimble.framework",
 				"${BUILT_PRODUCTS_DIR}/Quick/Quick.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PromiseKit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/YoutubeApiMedia.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Nimble.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Quick.framework",
 			);
@@ -494,7 +523,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				607FACEC1AFB9204008FA782 /* Tests.swift in Sources */,
+				607FACEC1AFB9204008FA782 /* ContentRestrictions.swift in Sources */,
+				E1F3B93B1FDF3E1B006431DD /* YoutubeMediaApiMock.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

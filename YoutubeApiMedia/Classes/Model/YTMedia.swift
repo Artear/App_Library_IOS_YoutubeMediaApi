@@ -9,7 +9,7 @@ import UIKit
 
 public class YTMedia {
     var source = [YTSource]()
-    init(source : [YTSource]) {
+    public init(source : [YTSource]) {
         self.source = source
     }
 }
