@@ -11,6 +11,7 @@ public enum YoutubeMediaApiError: Error {
     case unknown
     case withOutData
     case withQueryItems
+	case invalidSources
     case serverError(code:Int, reason:String)
 }
 
@@ -21,6 +22,7 @@ extension YoutubeMediaApiError: LocalizedError{
         case .unknown: return NSLocalizedString("unknown identifier", comment: "Youtube Error")
         case .withOutData: return NSLocalizedString("withOutData", comment: "Youtube Error")
         case .withQueryItems: return NSLocalizedString("withQueryItems", comment: "Youtube Error")
+		case .invalidSources: return NSLocalizedString("invalidSources", comment: "Youtube Error")
         case .serverError(let code , let reason):
             return NSLocalizedString("[\(code)] \(reason)", comment: "Youtube Error")
         }
@@ -31,6 +33,7 @@ extension YoutubeMediaApiError: LocalizedError{
         case .unknown: return 0
         case .withOutData: return 1
         case .withQueryItems: return 2
+		case .invalidSources: return 3
         case .serverError(let code , _):
             return code
         }
