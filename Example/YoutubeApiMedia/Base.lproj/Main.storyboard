@@ -162,7 +162,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="En9-Pf-2fv" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1542" y="-379"/>
+            <point key="canvasLocation" x="1541.5999999999999" y="-379.16041979010498"/>
         </scene>
         <!--Native Player View Controller-->
         <scene sceneID="vM7-QS-q4M">
@@ -178,9 +178,22 @@
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Oh0-gi-ra8">
                                 <rect key="frame" x="0.0" y="64" width="375" height="200"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="¡Error!" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3gR-Mw-TcZ">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="200"/>
+                                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
                                 <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="3gR-Mw-TcZ" secondAttribute="bottom" id="2Ih-ME-3As"/>
+                                    <constraint firstItem="3gR-Mw-TcZ" firstAttribute="top" secondItem="Oh0-gi-ra8" secondAttribute="top" id="9t4-Cd-9Ry"/>
                                     <constraint firstAttribute="width" secondItem="Oh0-gi-ra8" secondAttribute="height" multiplier="15:8" id="GkG-TR-UoJ"/>
+                                    <constraint firstItem="3gR-Mw-TcZ" firstAttribute="leading" secondItem="Oh0-gi-ra8" secondAttribute="leading" id="gTg-TU-mJj"/>
+                                    <constraint firstAttribute="trailing" secondItem="3gR-Mw-TcZ" secondAttribute="trailing" id="n3B-Yo-55W"/>
                                 </constraints>
                             </view>
                         </subviews>
@@ -193,6 +206,7 @@
                     </view>
                     <connections>
                         <outlet property="player" destination="Oh0-gi-ra8" id="t4a-Bh-M3z"/>
+                        <outlet property="playerError" destination="3gR-Mw-TcZ" id="MWf-Ny-WzN"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Tqg-06-pMw" userLabel="First Responder" sceneMemberID="firstResponder"/>

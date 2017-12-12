@@ -23,8 +23,8 @@ extension YoutubeMediaApiError: LocalizedError{
         case .withOutData: return NSLocalizedString("withOutData", comment: "Youtube Error")
         case .withQueryItems: return NSLocalizedString("withQueryItems", comment: "Youtube Error")
 		case .invalidSources: return NSLocalizedString("invalidSources", comment: "Youtube Error")
-        case .serverError(let code , let reason):
-            return NSLocalizedString("[\(code)] \(reason)", comment: "Youtube Error")
+        case .serverError(_, let reason):
+            return NSLocalizedString(reason, comment: "Youtube Error")
         }
     }
     

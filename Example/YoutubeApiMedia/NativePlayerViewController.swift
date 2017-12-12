@@ -12,8 +12,9 @@ import YoutubeApiMedia
 
 class NativePlayerViewController: UIViewController {
     @IBOutlet var player:UIView!
-    var params:YoutubeCoverVideo?
+    @IBOutlet var playerError:UILabel!
     
+    var params:YoutubeCoverVideo?
     var avPlayer:AVPlayer?
     var avPlayerLayer:AVPlayerLayer?
     
@@ -24,19 +25,20 @@ class NativePlayerViewController: UIViewController {
     }
 
     func loadVideo() {
+        self.playerError.isHidden = true
         guard let youtubeID = self.params?.id else {
             return
         }
         
         YoutubeMediaApi(id: youtubeID).run().then{ metadata -> Void in
-			let media = metadata.getMedia()
-			
-			let source = media?.getSources()[0]
-			guard let URLString = source?.getURL() else{
-				return
-			}
-			
-			let videoURL = URL(string: URLString)
+            let media = metadata.getMedia()
+            
+            let source = media?.getSources()[0]
+            guard let URLString = source?.getURL() else{
+                return
+            }
+            
+            let videoURL = URL(string: URLString)
             self.avPlayer = AVPlayer(url: videoURL!)
             self.avPlayerLayer = AVPlayerLayer(player: self.avPlayer)
             self.avPlayerLayer?.backgroundColor = UIColor.black.cgColor
@@ -44,7 +46,31 @@ class NativePlayerViewController: UIViewController {
             self.player.layer.addSublayer(self.avPlayerLayer!)
             self.avPlayer?.play()
             }.catch { error in
-                print("Error load video \(error.localizedDescription)")
+                
+                do {
+                    let data = error.localizedDescription.data(using: String.Encoding.isoLatin1, allowLossyConversion: true)
+                    if let d = data {
+                        
+                        var options = [NSAttributedString.DocumentReadingOptionKey:Any]()
+                        options[.documentType] = NSAttributedString.DocumentType.html
+                        
+                        let attr = try NSAttributedString(
+                            data: d,
+                            options: options,
+                            documentAttributes: nil
+                        )
+
+                        self.playerError.attributedText = NSAttributedString(attributedString: attr)
+                        self.playerError.textColor = UIColor.white
+                        self.playerError.font = UIFont.boldSystemFont(ofSize: 20)
+                        self.playerError.textAlignment = .center
+                        
+                    }
+                } catch {
+                    self.playerError?.text = "¡Error!"
+                }
+                
+                self.playerError.isHidden = false
         }
         
     }
