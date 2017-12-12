@@ -40,20 +40,32 @@ extension YTMetadata {
                 reason: reason
             )
         }
-        
+		
+		
+		//Video metadata keys info
+		var videoId : String!
+		var title : String!
+		var keyboards = [String]()
+		var sources = [YTSource]()
+		var type : YTMetadata.Types!
+		
         for item in youtubeItems {
             guard let value = item.value else {
                 continue
             }
             
             switch item.name {
+			case "video_id":
+				videoId = value
+				break
+				
             case "title":
-//                Metadata.title = value.replacingOccurrences(of: "+", with: " ")
+                title = value.replacingOccurrences(of: "+", with: " ")
                 break
             case "keywords":
-//                Metadata.keywords = value.components(separatedBy: ",").map({ (d) -> String in
-//                    return d.replacingOccurrences(of: "+", with: " ")
-//                })
+                keyboards = value.components(separatedBy: ",").map({ (d) -> String in
+                    return d.replacingOccurrences(of: "+", with: " ")
+                })
                 break
                 
             case "url_encoded_fmt_stream_map":
@@ -68,25 +80,31 @@ extension YTMetadata {
                     return item.value != nil && item.name == "url"
                 })
                 
-                let quality = itemsComponents.filter({ (item) -> Bool in
+                let qualitys = itemsComponents.filter({ (item) -> Bool in
                     return (
                         item.value != nil && item.name == "quality"
                     )
                 })
-                
-                if urls.count == quality.count {
+				
+				type = YTMetadata.Types.video
+				if urls.count == 0{
+					continue
+				}
+				
+                if urls.count == qualitys.count {
                     for index in 0...(urls.count - 1) {
-//                        if let source = self.createSource(components: [quality[index],urls[index]]){
-//                            sources.append(source)
-//                        }
+						if let quality = YTSource.QualityType(rawValue: qualitys[index].value!){
+								sources.append(YTSource(url: urls[index].value!, qualityType: quality))
+						}
                     }
                 }
                 
                 break
             case "hlsvp":
-//                Metadata.type = .live
-//                sources.append(Youtube.Metadata.Media.Sourse(url: value))
-                break
+				type = YTMetadata.Types.live
+				sources.append(YTSource(url: value))
+				
+				break
                 
                 //            case "player_response":
                 //                guard
@@ -107,12 +125,23 @@ extension YTMetadata {
                 break
             }
         }
-        
+		
+		if sources.count == 0 {
+			throw YoutubeMediaApiError.invalidSources
+		}
+		
+		
+		let metadata = YTMetadata(id: videoId)
+		metadata.keywords = keyboards
+		metadata.title = title
+		metadata.type = type
+		metadata.media = YTMedia(source: sources)
+		
+		return metadata
 //        let media = Youtube.Metadata.Media(source: sources)
 //        Metadata.media = media
 //        return Metadata
-
-        
-        return nil
+//
+//        return nil
     }
 }
