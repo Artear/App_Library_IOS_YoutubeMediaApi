@@ -29,8 +29,14 @@ class NativePlayerViewController: UIViewController {
         }
         
         YoutubeMediaApi(id: youtubeID).run().then{ metadata -> Void in
-            print("metadata \(metadata)")
-            let videoURL = URL(string: "https://clips.vorwaerts-gmbh.de/big_buck_bunny.mp4")
+			let media = metadata.getMedia()
+			
+			let source = media?.getSources()[0]
+			guard let URLString = source?.getURL() else{
+				return
+			}
+			
+			let videoURL = URL(string: URLString)
             self.avPlayer = AVPlayer(url: videoURL!)
             self.avPlayerLayer = AVPlayerLayer(player: self.avPlayer)
             self.avPlayerLayer?.backgroundColor = UIColor.black.cgColor
