@@ -69,8 +69,9 @@ extension YTMetadata {
                 break
                 
             case "url_encoded_fmt_stream_map":
+                let fixValue = value.replacingOccurrences(of: ",", with: "&")
                 guard
-                    let components = URLComponents(string: "http://yt?\(value)"),
+                    let components = URLComponents(string: "http://yt?\(fixValue)"),
                     let itemsComponents = components.queryItems
                     else{
                         continue
