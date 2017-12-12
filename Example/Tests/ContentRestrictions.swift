@@ -1,4 +1,10 @@
-// https://github.com/Quick/Quick
+//
+//  ContentRestrictions.swift
+//  YoutubeApiMedia_Tests
+//
+//  Created by Jose Luis Sagredo on 12/12/17.
+//  Copyright © 2017 CocoaPods. All rights reserved.
+//
 
 import Quick
 import Nimble
@@ -34,8 +40,9 @@ class ContentRestrictions: QuickSpec {
                 it("server error code is 150") {
                     expect(self.serverError!.errorCode) == 150
                 }
-
+                
             }
         }
     }
 }
+
