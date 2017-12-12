@@ -19,9 +19,7 @@ extension YTMetadata {
             else {
                 throw YoutubeMediaApiError.withQueryItems
         }
-
-        //let metadata = YTMetadata(id: self.id)
-        
+		
         if let errorCode = youtubeItems.filter({ (item) -> Bool in
             return item.value != nil && item.name == "errorcode"
         }).first {
@@ -40,7 +38,6 @@ extension YTMetadata {
                 reason: reason
             )
         }
-		
 		
 		//Video metadata keys info
 		var videoId : String!

@@ -12,5 +12,9 @@ public class YTMedia {
     public init(source : [YTSource]) {
         self.source = source
     }
+	
+	public func getSources() -> [YTSource]{
+		return self.source
+	}
 }
 

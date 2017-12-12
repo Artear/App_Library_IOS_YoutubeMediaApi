@@ -17,9 +17,29 @@ public class YTMetadata {
 	var title:String?
 	var keywords:[String] = [String]()
 	var media:YTMedia?
-    var type:Types = .video
+	var type:Types = .video
 	
 	public init(id:String) {
 		self.id = id
+	}
+	
+	public func getId() ->String{
+		return self.id
+	}
+
+	public func getTitle() ->String?{
+		return self.title
+	}
+	
+	public func getKeyboards() -> [String]{
+		return self.keywords
+	}
+
+	public func getMedia() -> YTMedia? {
+		return self.media
+	}
+	
+	public func getType() -> Types{
+		return self.type
 	}
 }

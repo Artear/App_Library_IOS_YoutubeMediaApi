@@ -22,5 +22,13 @@ public class YTSource {
         self.quality = qualityType
         self.url = url
     }
+	
+	public func getQuality() -> QualityType{
+		return self.quality
+	}
+	
+	public func getURL() -> String{
+		return self.url
+	}
 }
 
