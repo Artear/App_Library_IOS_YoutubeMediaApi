@@ -23,7 +23,7 @@ A Elegant Swift library for obtain Metadata of Youtube videos.
 
                        DESC
 
-  s.homepage         = 'https://github.com/Maro90/YoutubeApiMedia'
+  s.homepage         = 'https://github.com/Artear/App_Library_IOS_YoutubeMediaApi'
   # s.screenshots     = 'www.example.com/screenshots_1', 'www.example.com/screenshots_2'
   s.license          = { :type => 'MIT', :file => 'LICENSE' }
   s.author           = { 'Maro90' => 'mauro.d.gonzalez90@gmail.com' }
