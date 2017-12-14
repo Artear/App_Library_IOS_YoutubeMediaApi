@@ -18,7 +18,7 @@ PODS:
     - PromiseKit/CorePromise
   - Quick (1.2.0)
   - youtube-ios-player-helper (0.1.6)
-  - YoutubeMediaApi (0.1.0):
+  - YoutubeMediaApi (0.1.1):
     - PromiseKit (~> 4.4)
     - PromiseKit/Alamofire
 
@@ -42,7 +42,7 @@ SPEC CHECKSUMS:
   PromiseKit: 9c1d9f6d7b65e3951a90bea7f407c56972be5d8e
   Quick: 58d203b1c5e27fff7229c4c1ae445ad7069a7a08
   youtube-ios-player-helper: 21ab92db027c7ff86cb17a3843a3f6eafc8158d2
-  YoutubeMediaApi: 058115695d238cf5a6ac7c2286d3819e3b6bb87e
+  YoutubeMediaApi: b1d46b89feca7be5a90669d14bb31f2ca1bebe3b
 
 PODFILE CHECKSUM: e932f667bb1b4621d96048275598b6e62485f8d5
 
