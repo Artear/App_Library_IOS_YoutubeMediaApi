@@ -1,6 +1,6 @@
 //
 //  YoutubeMediaApiMock.swift
-//  YoutubeApiMedia_Tests
+//  YoutubeMediaApi_Tests
 //
 //  Created by Jose Luis Sagredo on 11/12/17.
 //  Copyright © 2017 CocoaPods. All rights reserved.
@@ -8,7 +8,7 @@
 
 import UIKit
 import PromiseKit
-import YoutubeApiMedia
+import YoutubeMediaApi
 
 public class YoutubeMediaApiMock {
     var id:String

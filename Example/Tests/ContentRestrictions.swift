@@ -1,6 +1,6 @@
 //
 //  ContentRestrictions.swift
-//  YoutubeApiMedia_Tests
+//  YoutubeMediaApi_Tests
 //
 //  Created by Jose Luis Sagredo on 12/12/17.
 //  Copyright © 2017 CocoaPods. All rights reserved.
@@ -8,7 +8,7 @@
 
 import Quick
 import Nimble
-import YoutubeApiMedia
+import YoutubeMediaApi
 
 class ContentRestrictions: QuickSpec {
     var api:YoutubeMediaApiMock?
